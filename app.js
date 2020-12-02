@@ -3,12 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var parentsRouter = require('./routes/parents');
 var kitaRouter = require('./routes/kita');
 
 var app = express();
+
+app.use(cors());
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
